@@ -1,0 +1,154 @@
+.entries-container {
+  padding: 2.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--bg-primary);
+}
+
+.entries-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+  font-family: "Playfair Display", serif;
+}
+
+.toggle-group {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.toggle-btn {
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  padding: 0.6rem 1.4rem;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s ease;
+  font-family: "DM Sans", sans-serif;
+}
+
+.toggle-btn:hover {
+  background: var(--accent);
+  color: white;
+}
+
+.toggle-btn.active {
+  background: var(--accent);
+  color: white;
+}
+
+.range-controls {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.range-controls input {
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background: var(--bg-input);
+  color: var(--text-primary);
+  font-family: "DM Sans", sans-serif;
+}
+
+.entry-card {
+  background: var(--bg-card);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 12px var(--shadow);
+}
+
+.entry-card h4 {
+  margin-bottom: 0.8rem;
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  font-family: "Playfair Display", serif;
+}
+
+.entry-card p {
+  margin: 0.4rem 0;
+  color: var(--text-secondary);
+}
+
+.entry-date {
+  margin-top: 0.8rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.loading-text,
+.empty-text {
+  color: var(--text-secondary);
+  margin-top: 1rem;
+  font-style: italic;
+  font-family: "DM Sans", sans-serif;
+}
+.entry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.delete-btn {
+  all: unset; /* 🔥 resets inherited button styles */
+  cursor: pointer;
+  font-size: 18px;
+  color: var(--text-secondary);
+  transition: 0.2s ease;
+}
+
+.delete-btn:hover {
+  color: #e63946; /* subtle red on hover */
+}
+
+.card-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.edit-btn {
+  all: unset;
+  cursor: pointer;
+  font-size: 16px;
+  color: #555;
+  transition: 0.2s ease;
+}
+
+.edit-btn:hover {
+  color: #111;
+}
+
+.edit-actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.edit-actions button {
+  padding: 6px 12px;
+  background: #111;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.edit-actions button:last-child {
+  background: #aaa;
+}
+.entries-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.entries-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}

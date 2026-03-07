@@ -1,0 +1,49 @@
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(44, 26, 14, 0.25);
+  z-index: 998;
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 220px;
+  height: 100vh;
+
+  background: var(--bg-input);
+  padding: 80px 32px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  box-shadow: 4px 0 20px var(--shadow);
+
+  z-index: 999;
+
+  animation: slideIn 0.2s ease-out;
+}
+
+.menu-link {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  font-family: "DM Sans", sans-serif;
+}
+
+.menu-link:hover {
+  color: var(--accent);
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}

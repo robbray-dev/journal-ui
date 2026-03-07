@@ -1,0 +1,151 @@
+/* Outer shell fills the full viewport */
+.page-shell {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 24px;
+  box-sizing: border-box;
+  background: var(--bg-primary);
+}
+
+/* Container takes full available width */
+.page-container {
+  width: 100%;
+  max-width: 1400px;
+  box-sizing: border-box;
+}
+
+/* Two-column grid — equal halves, fills the page */
+.journal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .journal-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* LEFT PANEL */
+.calendar-section {
+  background: var(--bg-card);
+  border-radius: 8px;
+  padding: 28px;
+  box-shadow: 0 2px 12px var(--shadow);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  min-height: 520px;
+}
+
+.calendar-section h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text-primary);
+  font-family: "Playfair Display", serif;
+}
+
+/* Center the react-calendar inside the panel */
+.calendar-section .react-calendar {
+  width: auto;
+  margin: 0 auto;
+  border: none;
+}
+
+/* RIGHT PANEL */
+.sidebar-section {
+  background: var(--bg-card);
+  border-radius: 8px;
+  padding: 28px;
+  box-shadow: 0 2px 12px var(--shadow);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  min-height: 520px;
+}
+
+.sidebar-section h2 {
+  margin-top: 0;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text-primary);
+  font-family: "Playfair Display", serif;
+}
+
+.entries-placeholder {
+  flex: 1;
+  background: var(--bg-primary);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  padding: 12px;
+  margin-bottom: 16px;
+  overflow-y: auto;
+}
+
+/* Calendar text colors */
+.react-calendar {
+  color: #222 !important;
+}
+.react-calendar__tile {
+  color: #222 !important;
+}
+.react-calendar__navigation__label {
+  color: #222 !important;
+}
+.react-calendar__navigation button {
+  color: #222 !important;
+}
+
+.sidebar-section {
+  color: #222;
+}
+.sidebar-section p {
+  color: #444;
+  margin-bottom: 16px;
+}
+.entries-placeholder {
+  color: #333;
+}
+
+.entry-card {
+  background: white;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+  border: 1px solid #eee;
+}
+.entry-card h4 {
+  margin: 0 0 6px 0;
+  font-size: 16px;
+  color: #222;
+}
+.entry-card p {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+}
+.menu-icon {
+  position: fixed;
+  top: 28px;
+  left: 28px;
+
+  color: #000;
+  cursor: pointer;
+
+  transition:
+    opacity 0.15s ease,
+    transform 0.15s ease;
+  z-index: 1000;
+}
+
+.menu-icon:hover {
+  opacity: 0.7;
+  transform: scale(1.05);
+}
