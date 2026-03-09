@@ -32,13 +32,6 @@ export default function Journal() {
     fetchEntries();
   }, [selectedDate]);
 
-  const formattedSelectedDate =
-    selectedDate.getFullYear() +
-    "-" +
-    String(selectedDate.getMonth() + 1).padStart(2, "0") +
-    "-" +
-    String(selectedDate.getDate()).padStart(2, "0");
-
   // Entries are already filtered by date from the API
   const filteredEntries = entries;
 
