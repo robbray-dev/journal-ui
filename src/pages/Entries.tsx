@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { deleteEntry } from "../services/entries";
 import { Menu } from "lucide-react";
 import SideMenu from "../components/SideMenu";
@@ -24,6 +24,10 @@ export default function EntriesPage() {
   const [editTitle, setEditTitle] = useState("");
   const [editDid, setEditDid] = useState("");
   const [editLearned, setEditLearned] = useState("");
+
+  useEffect(() => {
+    fetchData("today");
+  }, []);
 
   const fetchData = async (type: "today" | "weekly") => {
     try {
