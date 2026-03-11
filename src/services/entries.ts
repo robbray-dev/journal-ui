@@ -31,10 +31,6 @@ export async function createEntry(data: {
   });
 }
 
-export async function getWeeklyEntries(): Promise<Entry[]> {
-  return apiFetch("/api/v1/entries/weekly");
-}
-
 export async function getRangeEntries(
   start: string,
   end: string,

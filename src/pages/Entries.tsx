@@ -6,7 +6,6 @@ import "../styles/entries.css";
 import {
   type Entry,
   getEntriesByDate,
-  getWeeklyEntries,
   getRangeEntries,
   updateEntry,
 } from "../services/entries";
@@ -40,7 +39,14 @@ export default function EntriesPage() {
         const today = new Date().toLocaleDateString("en-CA");
         data = await getEntriesByDate(today);
       } else {
-        data = await getWeeklyEntries();
+        const end = new Date();
+        const start = new Date();
+        start.setDate(end.getDate() - 7);
+
+        const startDate = start.toLocaleDateString("en-CA");
+        const endDate = end.toLocaleDateString("en-CA");
+
+        data = await getRangeEntries(startDate, endDate);
       }
 
       setEntries(data);
@@ -66,16 +72,17 @@ export default function EntriesPage() {
       setLoading(false);
     }
   };
+
   const handleDelete = async (id: number) => {
     try {
       await deleteEntry(id);
 
-      // remove from UI immediately
       setEntries((prev) => prev.filter((e) => e.id !== id));
     } catch (err) {
       console.error("Failed to delete entry", err);
     }
   };
+
   const handleUpdate = async (
     id: number,
     updatedData: {
@@ -87,7 +94,6 @@ export default function EntriesPage() {
     try {
       const updatedEntry = await updateEntry(id, updatedData);
 
-      // Update local state
       setEntries((prev) =>
         prev.map((entry) =>
           entry.id === id ? { ...entry, ...updatedEntry } : entry,
