@@ -19,7 +19,9 @@ export default function Journal() {
     const fetchEntries = async () => {
       try {
         setLoading(true);
-        const date = selectedDate.toISOString().split("T")[0];
+
+        const date = selectedDate.toLocaleDateString("en-CA");
+
         const data = await getEntriesByDate(date);
         setEntries(data);
       } catch (err) {
@@ -41,7 +43,8 @@ export default function Journal() {
     what_learned: string,
   ) => {
     try {
-      const entryDate = selectedDate.toISOString().split("T")[0];
+      const entryDate = selectedDate.toLocaleDateString("en-CA");
+
       const newEntry = await createEntry({
         title,
         what_did,

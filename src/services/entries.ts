@@ -31,10 +31,6 @@ export async function createEntry(data: {
   });
 }
 
-export async function getTodayEntries(): Promise<Entry[]> {
-  return apiFetch("/api/v1/entries/today");
-}
-
 export async function getWeeklyEntries(): Promise<Entry[]> {
   return apiFetch("/api/v1/entries/weekly");
 }

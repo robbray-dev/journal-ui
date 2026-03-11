@@ -5,7 +5,7 @@ import SideMenu from "../components/SideMenu";
 import "../styles/entries.css";
 import {
   type Entry,
-  getTodayEntries,
+  getEntriesByDate,
   getWeeklyEntries,
   getRangeEntries,
   updateEntry,
@@ -37,7 +37,8 @@ export default function EntriesPage() {
       let data: Entry[] = [];
 
       if (type === "today") {
-        data = await getTodayEntries();
+        const today = new Date().toLocaleDateString("en-CA");
+        data = await getEntriesByDate(today);
       } else {
         data = await getWeeklyEntries();
       }
